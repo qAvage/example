@@ -1,0 +1,58 @@
+//- Prices page ---------------------------------------------------------------
+extends ./layouts/base-layout
+block pageConfig
+  - var pageTitle = 'Цены'
+  - var pageClass = 'page-prices'
+block pageContent
+  include layouts/breadcrumbs
+  include layouts/services-section
+  include layouts/calculator-section
+  section.promotions-section
+    .container
+      .row: .col: +heading('h2', 'Акции').promotions-section-heading
+      .row.promotions-list-wrapper
+        -
+          var promotionsList = [
+
+          {
+          img: 'promo_1.jpg',
+          title: 'Скидка 10% на детские замки с установкой',
+          desc: 'При заказе москитных сеток "Под ключ" вы получаете 10% скидку любые детские замки с установкой. Количество замков по акции соответствует количеству москитных сеток.'
+          },
+          {
+          img: 'promo_1.jpg',
+          title: 'Скидка 10% на детские замки с установкой',
+          desc: 'При заказе москитных сеток "Под ключ" вы получаете 10% скидку любые детские замки с установкой. Количество замков по акции соответствует количеству москитных сеток.'
+          },
+          {
+          img: 'promo_1.jpg',
+          title: 'Скидка 10% на детские замки с установкой',
+          desc: 'При заказе москитных сеток "Под ключ" вы получаете 10% скидку любые детские замки с установкой. Количество замков по акции соответствует количеству москитных сеток.'
+          },
+          {
+          img: 'promo_1.jpg',
+          title: 'Скидка 10% на детские замки с установкой',
+          desc: 'При заказе москитных сеток "Под ключ" вы получаете 10% скидку любые детские замки с установкой. Количество замков по акции соответствует количеству москитных сеток.'
+          },
+          {
+          img: 'promo_1.jpg',
+          title: 'Скидка 10% на детские замки с установкой',
+          desc: 'При заказе москитных сеток "Под ключ" вы получаете 10% скидку любые детские замки с установкой. Количество замков по акции соответствует количеству москитных сеток.'
+          },
+          {
+          img: 'promo_1.jpg',
+          title: 'Скидка 10% на детские замки с установкой',
+          desc: 'При заказе москитных сеток "Под ключ" вы получаете 10% скидку любые детские замки с установкой. Количество замков по акции соответствует количеству москитных сеток.'
+          }
+
+          ]
+        each promo in promotionsList
+          .col-12.col-lg-6.promo-item: .row
+            .col-12.col-sm-5.col-lg-6.promotion-img
+              +img-bg('a', promo.img)(href="service_inside.html" title="Перейти к ации").image
+            .col-12.col-sm-7.col-lg-6.promotion-desc
+              .content
+                h3.title=promo.title
+                p.desc=promo.desc
+                a(href="service_inside.html" title="Перейти к ации").detailed Подробнее
+  include layouts/form-call
